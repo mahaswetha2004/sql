@@ -4,3 +4,5 @@ desc employee1;
 
 insert into employee1(empid,empname,mailid) values('011a','aki','aki@gmail.com');
 select*from employee1;
+
+create table student(id varchar(10),name char(20));
