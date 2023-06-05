@@ -1,0 +1,13 @@
+create table mark (id varchar(20),name char(20),m1 varchar(20),m2 varchar(20),m3 varchar(20));
+desc mark;
+insert into mark (id,name,m1,m2,m3) values ('01','a','85','65','75');
+insert into mark (id,name,m1,m2,m3) values ('02','b','95','75','65');
+insert into mark (id,name,m1,m2,m3) values ('03','c','66','75','83');
+insert into mark (id,name,m1,m2,m3) values ('04','d','55','75','95');
+insert into mark (id,name,m1,m2,m3) values ('05','e','55','65','79');
+select*from mark;
+select sum(m1) m1_total from mark;
+select avg(m1) m1_average from mark;
+select min(m1) m1_minimum_value from mark;
+select max(m1) m1_maximum_value from mark;
+select count(id) total_id from mark;
