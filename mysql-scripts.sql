@@ -14,3 +14,4 @@ insert into sales_order(sorder,product_no,qty) values('p02','a1',8);
 insert into sales_order(sorder,product_no,qty) values('p02','a2',32);
 insert into sales_order(sorder,product_no,qty) values('p02','a3',10);
 select product_no,qty from sales_order groupby product_no;
+select * from sales_order;
