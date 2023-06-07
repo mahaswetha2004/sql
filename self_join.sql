@@ -1,0 +1,15 @@
+create table student5 (firstname char(20),city char(20),lastname char(20));
+desc student5;
+insert into student5(firstname,city,lastname) values ('maha','tamilnadu','swetha');
+insert into student5(firstname,city,lastname) values ('brindha','tamilnadu','shree');
+insert into student5(firstname,city,lastname) values ('sathya','tamilnadu','praba');
+select*from student5;
+create table s1 (firstname char(20),city char(20));
+desc s1;
+insert into s1 select firstname,city from student5;
+select * from s1;
+create table s2 (lastname char(20),city char(20));
+desc s2;
+insert into s2 select lastname,city from student5;
+select*from s2;
+select s1.student5,s2.lastname,s2.city from student5 s1,student5 s2 where s1.city=s2.city;
