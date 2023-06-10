@@ -1,0 +1,15 @@
+create table client (id varchar(20),name char(20),address varchar(20),state char(20),mobile varchar(20));
+desc client;
+insert into client(id,name,address,state,mobile) values ('01','A','1g','tamilnadu','8965471230');
+insert into client(id,name,address,state,mobile) values ('02','B','25L','tamilnadu','9632587410');
+insert into client(id,name,address,state,mobile) values ('03','C','H8','tamilnadu','7894561230');
+insert into client(id,name,address,state,mobile) values ('04','D','11P','tamilnadu','8562101479');
+insert into client(id,name,address,state,mobile) values ('05','E','O2','tamilnadu','7845120369');
+insert into client(id,name,address,state,mobile) values ('06','F','9B','tamilnadu','9874563210');
+insert into client(id,name,address,state,mobile) values ('07','G','K6','tamilnadu','6325987410');
+insert into client(id,name,address,state,mobile) values ('08','H','W2','tamilnadu','9032145687');
+select * from client;
+create table client1 (id varchar(20),name char(20),mobile varchar(20));
+desc client1;
+insert into client1 select id ,name from client;
+insert into client1 select id ,name from client where '01';
