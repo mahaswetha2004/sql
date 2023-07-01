@@ -1,0 +1,16 @@
+create table users (id varchar(50)primary key not null,firstname char(50) not null,lastname char(50) not null,phone varchar(50)not null,username char(50)not null,password varchar(50)not null);
+desc users;
+create table vendors (id varchar(50)primary key not null,companyname char(50) not null,gstin varchar(50) not null,address varchar(50) not null,phone varchar(50) not null,email char(50) not null);
+desc vendors;
+create table customers (id varchar(50)primary key not null,companyname char(50) not null ,gstin varchar(50)not null,address varchar(50) not null,phone varchar(50) not null,email char(50) not null);
+desc customers;
+create table items (id varchar(50)primary key not null,name char(50) not null,code varchar(50) not null,purchasesrate varchar(50) not null,salesrate varchar(50));
+desc items;
+create table purchase (id varchar(50)primary key not null,date varchar(50) not null,subtotal varchar(50) not null,tax varchar(50) not null,total varchar(50) not null,itemsarray varchar(50) not null);
+desc purchase;
+create table sales (id varchar(50)primary key not null,date varchar(50) not null,customer char(50) not null,subtotal varchar(50) not null,tax varchar(50) not null,total varchar(50) not null,itemsarray varchar(50) not null);
+desc sales;
+create table purchase_payment(id varchar(50)primary key not null,vendor char(50) not null,purchasesid varchar(50) not null,paid varchar(50) not null,balance varchar(50) not null);
+desc purchase_payment ;
+create table sales_payment(id varchar(50)primary key not null,customer char(50) not null,salesid varchar(50) not null,paid varchar(50) not null,balance varchar(50) not null);
+desc sales_payment ;
