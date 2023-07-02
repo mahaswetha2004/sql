@@ -1,16 +1,79 @@
-create table users (id varchar(50)primary key not null,firstname char(50) not null,lastname char(50) not null,phone varchar(50)not null,username char(50)not null,password varchar(50)not null);
-desc users;
-create table vendors (id varchar(50)primary key not null,companyname char(50) not null,gstin varchar(50) not null,address varchar(50) not null,phone varchar(50) not null,email char(50) not null);
-desc vendors;
-create table customers (id varchar(50)primary key not null,companyname char(50) not null ,gstin varchar(50)not null,address varchar(50) not null,phone varchar(50) not null,email char(50) not null);
-desc customers;
-create table items (id varchar(50)primary key not null,name char(50) not null,code varchar(50) not null,purchasesrate varchar(50) not null,salesrate varchar(50));
-desc items;
-create table purchase (id varchar(50)primary key not null,date varchar(50) not null,subtotal varchar(50) not null,tax varchar(50) not null,total varchar(50) not null,itemsarray varchar(50) not null);
+
+create table user (
+id integer primary key not null,
+firstname varchar(50) not null,
+lastname varchar(50) not null,
+phone char(10) not null,
+role varchar(20) not null,
+username varchar(20) not null,
+password varchar(50) not null);
+
+desc user;
+
+create table item (
+id integer primary key not null,
+name varchar(50) not null,
+code integer not null,
+purchase_rate integer not null,
+sale_rate integer not null);
+
+desc item;
+
+create table vendor (
+id integer primary key not null,
+name varchar(50) not null,
+gstin char(15) not null,
+address varchar(50) not null,
+phone char(10) not null,
+email varchar(50) not null);
+
+desc vendor;
+
+create table customer (
+id integer primary key not null,
+name varchar(50) not null ,
+gstin char(15) not null,
+address varchar(50) not null,
+phone char(10) not null,
+email varchar(50) not null);
+
+desc customer;
+
+create table purchase (
+id integer primary key not null,
+date datetime not null,
+subtotal integer not null,
+tax integer not null,
+total integer not null,
+items_array integer not null);
+
 desc purchase;
-create table sales (id varchar(50)primary key not null,date varchar(50) not null,customer char(50) not null,subtotal varchar(50) not null,tax varchar(50) not null,total varchar(50) not null,itemsarray varchar(50) not null);
-desc sales;
-create table purchase_payment(id varchar(50)primary key not null,vendor char(50) not null,purchasesid varchar(50) not null,paid varchar(50) not null,balance varchar(50) not null);
+
+create table sale (
+id integer primary key not null,
+date datetime not null,
+customer varchar(50) not null,
+subtotal integer not null,
+tax integer not null,
+total integer not null,
+items_array integer not null);
+
+desc sale;
+
+create table purchase_payment(
+id integer primary key not null,
+vendor varchar(50) not null,
+purchaseid integer not null,
+paid integer not null,
+balance integer not null);
+
 desc purchase_payment ;
-create table sales_payment(id varchar(50)primary key not null,customer char(50) not null,salesid varchar(50) not null,paid varchar(50) not null,balance varchar(50) not null);
-desc sales_payment ;
+
+create table sale_payment(
+id integer primary key not null,
+customer varchar(50) not null,
+saleid integer not null,
+paid integer not null,
+balance integer not null);
+
+desc sale_payment ;
